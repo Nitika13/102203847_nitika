@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: pr_backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"   # exposes backend to host (useful for local testing)
+    volumes:
+      - ./backend:/app:rw           # mount backend code for quick dev changes (optional)
+      - ./backend/data:/data:rw     # persistent data (CSV)
+      - ./backend/models:/models:rw # saved embeddings, indices, etc.
+    # If using sentence-transformers you might want more memory; tune as needed
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: pr_frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80"   # serve static on host:5173 (maps nginx 80 to host 5173)
+    volumes:
+      - ./frontend:/app:ro  # optional; not needed after build
+    depends_on:
+      - backend
