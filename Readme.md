@@ -70,43 +70,6 @@ It integrates:
 
 ---
 
-## 📂 Project Structure
-
-product-recommender/
-│
-├── backend/
-│ ├── app/
-│ │ ├── api/ # FastAPI routes
-│ │ ├── utils/ # helper modules (pinecone_client, cv_model)
-│ │ ├── main.py # entrypoint for FastAPI
-│ ├── data/products.csv # dataset
-│ ├── models/ # embeddings / saved models
-│ ├── requirements.txt
-│ └── Dockerfile
-│
-├── frontend/
-│ ├── src/
-│ │ ├── pages/Recommend.jsx
-│ │ ├── pages/Analytics.jsx
-│ │ └── App.jsx
-│ ├── package.json
-│ └── Dockerfile
-│
-├── notebooks/
-│ ├── Model_Training.ipynb # Embeddings + Recommendation
-│ └── Analytics.ipynb # EDA + Visualizations
-│
-├── nginx/
-│ └── nginx.conf
-│
-├── docker-compose.yml
-├── .env.example
-├── .dockerignore
-└── README.md
-
-
----
-
 ## 🧩 Key Components
 
 ### 🧠 1. Machine Learning (Model_Training.ipynb)
