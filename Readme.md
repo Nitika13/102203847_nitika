@@ -1,10 +1,10 @@
-# 🛍️ AI-Powered Product Recommendation & Analytics System
+#  AI-Powered Product Recommendation & Analytics System
 
 An end-to-end **AI/ML-powered web application** for intelligent product recommendation, analytics, and description generation — built using **FastAPI (backend)**, **React (frontend)**, and **Machine Learning (NLP + CV + GenAI)** models.
 
 ---
 
-## 🚀 Project Overview
+## Project Overview
 
 This project demonstrates a **complete AI lifecycle**, from data ingestion and model training to web deployment.  
 It integrates:
@@ -16,7 +16,7 @@ It integrates:
 
 ---
 
-## 🎯 Features
+##  Features
 
 ✅ Intelligent product recommendations using text embeddings  
 ✅ Generative AI for automatic product descriptions  
@@ -29,7 +29,7 @@ It integrates:
 
 ---
 
-## 🧠 Tech Stack
+## Tech Stack
 
 | Layer | Tools / Frameworks |
 |--------|--------------------|
@@ -44,7 +44,7 @@ It integrates:
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
             ┌──────────────────────────┐
             │        Frontend          │
@@ -70,34 +70,34 @@ It integrates:
 
 ---
 
-## 🧩 Key Components
+##  Key Components
 
-### 🧠 1. Machine Learning (Model_Training.ipynb)
+### 1. Machine Learning (Model_Training.ipynb)
 - Uses **Sentence Transformers** (`all-MiniLM-L6-v2`) to generate embeddings.
 - Computes similarity with **cosine similarity**.
 - Evaluates performance using **Recall@K** metrics.
 - Stores embeddings for use in backend APIs.
 
-### 📊 2. Data Analytics (Analytics.ipynb)
+###  2. Data Analytics (Analytics.ipynb)
 - Performs **EDA** on `products.csv`.
 - Visualizes brand distribution, price ranges, and category spread.
 - Computes summary stats: average price, total products, etc.
 
-### 🧠 3. NLP + GenAI
+###  3. NLP + GenAI
 - Embeddings enable semantic search.
 - LangChain/OpenAI used for generating creative descriptions.
 
-### 🖼️ 4. Computer Vision (cv_model.py)
+###  4. Computer Vision (cv_model.py)
 - Extracts **color histogram features** from product images.
 - Enables visual similarity-based recommendations.
 
-### 🌐 5. Frontend (React + Vite)
+###  5. Frontend (React + Vite)
 - Simple UI with routes:
   - `/recommend` → search & recommendations
   - `/analytics` → charts & summary stats
 - Communicates with backend using Axios.
 
-### ⚙️ 6. Backend (FastAPI)
+###  6. Backend (FastAPI)
 Endpoints:
 | Endpoint | Description |
 |-----------|--------------|
@@ -110,13 +110,13 @@ Endpoints:
 
 ## 🐳 Running Locally with Docker
 
-### 🧱 Prerequisites
+###  Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - Git
 
 ---
 
-### ⚙️ 1. Clone the Repository
+###  1. Clone the Repository
 ```bash
 git clone https://github.com/Nitika13/product-recommender.git
 cd product-recommender
