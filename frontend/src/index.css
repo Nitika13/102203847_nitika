@@ -66,3 +66,29 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* ---------- Recommend improvements ---------- */
+.results-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+/* Wider screens: make grid two columns */
+@media (min-width: 980px) {
+  .results-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Card inner typography tuning */
+.card-title { font-size: 15px; font-weight: 800; line-height: 1.1; }
+.card-desc  { font-size: 13px; color: var(--muted); line-height: 1.35; margin-top: 6px; }
+
+/* small helper */
+.small { font-size: 13px; color: var(--muted); }
+
+/* Ensure inputs/buttons are visually pleasant */
+.input { padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.06); }
+.btn { padding: 8px 12px; border-radius: 10px; cursor: pointer; }
+.btn-primary { padding: 8px 12px; border-radius: 10px; }
+
+/* make aside (left panel) sticky during scroll on large screens */
+@media (min-width: 920px) {
+  aside.card { position: sticky; top: 24px; align-self: start; }
+}
+
