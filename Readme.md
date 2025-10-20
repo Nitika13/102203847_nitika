@@ -29,6 +29,10 @@ It integrates:
 
 ---
 
+
+![Logo](logo.png)
+
+
 ## Tech Stack
 
 | Layer | Tools / Frameworks |
