@@ -32,3 +32,4 @@ async def global_exception_handler(request, exc):
 app.include_router(ingest.router, prefix="/api/ingest", tags=["ingest"])
 app.include_router(recommend.router, prefix="/api/recommend", tags=["recommend"])
 app.include_router(analytics.router, prefix="/api/analytics", tags=["analytics"])
+

@@ -6,6 +6,9 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
+# Create a writable cache directory
+ENV TRANSFORMERS_CACHE=/app/cache
+RUN mkdir -p /app/cache
 
 # system deps (for sentence-transformers and pillow)
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -16,7 +19,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt faiss-cpu sentence-transformers
+
 
 # copy app code
 COPY . .
@@ -29,7 +33,7 @@ EXPOSE 8000
 
 # create a user (optional safer)
 RUN groupadd -r appuser && useradd -r -g appuser appuser
-USER appuser
+USER root
 
 # Command to run the app
 # Use --host 0.0.0.0 so it's reachable from other containers
